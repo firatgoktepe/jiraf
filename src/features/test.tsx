@@ -1,5 +1,5 @@
 export const TestComponent = () => {
-  return <div className="text-orange-500">Test</div>;
+  return <div className="text-green-500">Test</div>;
 };
 
 export default TestComponent;
