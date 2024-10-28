@@ -14,7 +14,7 @@ const app = new Hono()
         sessionMiddleware,
         async (c) => {
             const databases = c.get("databases");
-            const { user } = c.get("user");
+            const user = c.get("user");
 
             const { name } = c.req.valid("json");
 
@@ -24,6 +24,7 @@ const app = new Hono()
                 ID.unique(),
                 {
                     name,
+                    userId: user.$id,
                 },
             );
             return c.json({ data: workspace });
