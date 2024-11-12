@@ -7,12 +7,15 @@ import { RiAddCircleFill } from "react-icons/ri";
 
 import { useGetProjects } from "@/features/projects/api/use-get-projects";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
+import { useCreateProjectModal } from "@/features/projects/hooks/use-create-project-modal";
 import { cn } from "@/lib/utils";
+import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 
 export const Projects = () => {
   const projectId = null; // TODO: Use the useProjectId hook
 
   const pathname = usePathname();
+  const { open } = useCreateProjectModal();
   const workspaceId = useWorkspaceId();
   const { data } = useGetProjects({
     workspaceId,
@@ -23,7 +26,7 @@ export const Projects = () => {
       <div className="flex items-center justify-between">
         <p className="text-xs uppercase text-neutral-500">Projects</p>
         <RiAddCircleFill
-          onClick={() => {}}
+          onClick={open}
           className="size-5 text-neutral-500 cursor-pointer hover:opacity-75 transition"
         />
       </div>
@@ -35,10 +38,11 @@ export const Projects = () => {
           <Link href={href} key={project.$id}>
             <div
               className={cn(
-                "flex items-center gap-2.5 p-2.5 rounded-md hover:opacaity-75 transition text-neutral-500 cursor-pointer",
+                "flex items-center gap-2.5 p-2.5 rounded-md hover:opacity-75 transition text-neutral-500 cursor-pointer",
                 isActive && "bg-white shadow-sm text-primary hover:opacity-100"
               )}
             >
+              <ProjectAvatar name={project.name} image={project.imageUrl} />
               <span className="truncate">{project.name}</span>
             </div>
           </Link>
