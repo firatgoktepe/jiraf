@@ -7,7 +7,7 @@ import { zValidator } from "@hono/zod-validator";
 import { sessionMiddleware } from "@/lib/session-middleware";
 import { getMember } from "@/features/members/utils";
 import { DATABASE_ID, IMAGES_BUCKET_ID, PROJECTS_ID } from '@/config';
-import { createProjectSchema } from "../schema";
+import { createProjectSchema } from "../schemas";
 
 const app = new Hono()
     .post(
@@ -54,7 +54,6 @@ const app = new Hono()
                 ID.unique(),
                 {
                     name,
-                    userId: user.$id,
                     imageUrl: uploadedImageUrl,
                     workspaceId
                 },
@@ -95,7 +94,7 @@ const app = new Hono()
                 PROJECTS_ID,
                 [
                     Query.equal("workspaceId", workspaceId),
-                    Query.orderDesc("createdAt"),
+                    Query.orderDesc("$createdAt"),
 
                 ],
             )
