@@ -30,6 +30,7 @@ import { useConfirm } from "@/hooks/use-confirm";
 
 import { updateProjectSchema } from "../schemas";
 import { useUpdateProject } from "../api/use-update-project";
+import { useDeleteProject } from "../api/use-delete-project";
 
 import { Project } from "../types";
 
@@ -45,9 +46,12 @@ export const EditProjectForm = ({
   const router = useRouter();
   const { mutate, isPending } = useUpdateProject();
 
+  const { mutate: deleteProject, isPending: isDeletingProject } =
+    useDeleteProject();
+
   const [DeleteDialog, confirmDelete] = useConfirm(
-    "Delete Workspace",
-    "Are you sure you want to delete this project? This action cannot be undone.",
+    "Delete Project",
+    "This action cannot be undone.",
     "destructive"
   );
 
@@ -68,6 +72,17 @@ export const EditProjectForm = ({
       return;
     }
   };
+
+  deleteProject(
+    {
+      param: { projectId: initialValues.$id },
+    },
+    {
+      onSuccess: () => {
+        window.location.href = `/workspaces/${initialValues.workspaceId}`;
+      },
+    }
+  );
 
   const onSubmit = (values: z.infer<typeof updateProjectSchema>) => {
     const finalValues = {
@@ -247,7 +262,7 @@ export const EditProjectForm = ({
               variant="destructive"
               size="sm"
               onClick={handleDelete}
-              disabled={isPending}
+              disabled={isPending || isDeletingProject}
             >
               Delete Project
             </Button>
