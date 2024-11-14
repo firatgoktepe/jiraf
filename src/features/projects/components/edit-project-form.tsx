@@ -71,18 +71,18 @@ export const EditProjectForm = ({
     if (!ok) {
       return;
     }
-  };
 
-  deleteProject(
-    {
-      param: { projectId: initialValues.$id },
-    },
-    {
-      onSuccess: () => {
-        window.location.href = `/workspaces/${initialValues.workspaceId}`;
+    deleteProject(
+      {
+        param: { projectId: initialValues.$id },
       },
-    }
-  );
+      {
+        onSuccess: () => {
+          window.location.href = `/workspaces/${initialValues.workspaceId}`;
+        },
+      }
+    );
+  };
 
   const onSubmit = (values: z.infer<typeof updateProjectSchema>) => {
     const finalValues = {
