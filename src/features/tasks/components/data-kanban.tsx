@@ -25,7 +25,7 @@ type TaskState = {
 
 interface DataKanbanProps {
   data: Task[];
-  onChange?: (
+  onChange: (
     tasks: { $id: string; status: TaskStatus; position: number }[]
   ) => void;
 }
@@ -148,7 +148,7 @@ export const DataKanban = ({ data, onChange }: DataKanbanProps) => {
         return newTasks;
       });
 
-      onChange?.(updatesPayload);
+      onChange(updatesPayload);
     },
     [onChange]
   );
