@@ -10,8 +10,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { DataFilters } from "./data-filters";
 import { DataTable } from "./data-table";
 import { columns } from "./columns";
-import { DottedSeparator } from "@/components/dotted-separator";
+import { DataCalendar } from "./data-calendar";
 import { DataKanban } from "./data-kanban";
+import { DottedSeparator } from "@/components/dotted-separator";
 
 import { useCreateTaskModal } from "../hooks/use-create-task-modal";
 import { useTaskFilters } from "../hooks/use-task-filters";
@@ -94,7 +95,7 @@ export const TaskViewSwitcher = () => {
               />
             </TabsContent>
             <TabsContent value="calender" className="mt-0">
-              {JSON.stringify(tasks)}
+              <DataCalendar data={tasks?.documents ?? []} />
             </TabsContent>
           </>
         )}
