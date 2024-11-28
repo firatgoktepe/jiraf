@@ -7,7 +7,9 @@ import { DottedSeparator } from "@/components/dotted-separator";
 import { TaskDate } from "./task-date";
 import { OverviewProperty } from "./overview-property";
 
+import { useEditTaskModal } from "../hooks/use-edit-task-modal";
 import { Task } from "../types";
+
 import { snakeCaseToTitleCase } from "@/lib/utils";
 
 interface TaskOverviewProps {
@@ -15,12 +17,13 @@ interface TaskOverviewProps {
 }
 
 export const TaskOverview = ({ task }: TaskOverviewProps) => {
+  const { open } = useEditTaskModal();
   return (
     <div className="flex flex-col gap-y-4 col-span-1">
       <div className="bg-muted rounded-lg p-4">
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Overview</p>
-          <Button variant="secondary" size="sm">
+          <Button onClick={() => open(task.$id)} variant="secondary" size="sm">
             <PencilIcon className="size-4 mr-2" />
             Edit
           </Button>
