@@ -111,17 +111,10 @@ export const EditWorkspaceForm = ({
       image: values.image instanceof File ? values.image : "",
     };
 
-    mutate(
-      {
-        form: finalValues,
-        param: { workspaceId: initialValues.$id },
-      },
-      {
-        onSuccess: () => {
-          form.reset();
-        },
-      }
-    );
+    mutate({
+      form: finalValues,
+      param: { workspaceId: initialValues.$id },
+    });
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
