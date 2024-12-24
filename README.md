@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 📋 <a name="table">Table of Contents</a>
 
-## Getting Started
+1. 🤖 [Introduction](#introduction)
+2. ⚙️ [Tech Stack](#tech-stack)
+3. 🔋 [Features](#features)
+4. 🤸 [Quick Start](#quick-start)
 
-First, run the development server:
+### Live: https://jiraf.vercel.app
+
+## <a name="introduction">🤖 Introduction</a>
+
+Jiraf is an issue tracking and agile project management app all built using Next.js.
+
+## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- [Next.js 14](https://nextjs.org/) (React Framework)
+- [Appwrite](https://appwrite.io/) (for database, an ORM tool, file storage, Messaging and authentication)
+- [TypeScript 5](https://www.typescriptlang.org/) (Type Checking)
+- [Tailwind CSS 3.4.1](https://tailwindcss.com/) (Styling)
+- [ShadCN](https://ui.shadcn.com/) (UI Components)
+- [ESLint 8](https://eslint.org/) (Code Linting)
+
+## <a name="features">🔋 Features</a>
+
+🏢 Workspaces
+📊 Projects / Epics
+✅ Tasks
+📋 Kanban Board View
+🗃️ Data Table View
+📅 Calendar View
+✉️ Invite System
+⚙️ Workspace and Project Settings
+🖼️ Image Uploads (for avatars and attachments)
+🔌 Appwrite SDK Integration
+🎨 Shadcn UI & TailwindCSS Styling
+🔍 Advanced Search and Filtering
+📈 Analytics Dashboard
+👥 User Roles and Permissions
+🔒 Authentication (OAuth and Email)
+📱 Responsive Design (Mobile-friendly)
+🚀 API using Hono.js
+
+## <a name="quick-start">🤸 Quick Start</a>
+
+Follow these steps to set up the project locally on your machine.
+
+**Prerequisites**
+
+Make sure you have the following installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+**Cloning the Repository**
+
+```bash
+git clone git@github.com:firatgoktepe/jiraf.git
+cd jiraf
+```
+
+**Installation**
+
+Install the project dependencies using npm:
+
+```bash
+npm install
+```
+
+**Set Up Environment Variables**
+
+Create a new file named `.env.local` in the root of your project and add the following content:
+
+```env
+#APPWRITE
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+NEXT_PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+NEXT_PUBLIC_APPWRITE_PROJECT=[Your key]
+
+NEXT_PUBLIC_APPWRITE_DATABASE_ID=[Your key]
+NEXT_PUBLIC_APPWRITE_WORKSPACES_ID=[Your key]
+NEXT_PUBLIC_APPWRITE_MEMBERS_ID=[Your key]
+NEXT_PUBLIC_APPWRITE_PROJECTS_ID=[Your key]
+NEXT_PUBLIC_APPWRITE_TASKS_ID=[Your key]
+NEXT_PUBLIC_APPWRITE_IMAGES_BUCKET_ID=[Your key]
+
+NEXT_APPWRITE_KEY=[Your key]
+```
+
+Replace the placeholder values with your actual Appwrite credentials. You can obtain these credentials by signing up on the [Appwrite website](https://appwrite.io/).
+
+**Running the Project**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
