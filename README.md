@@ -15,6 +15,7 @@ Jiraf is an issue tracking and agile project management app all built using Next
 
 - [Next.js 14](https://nextjs.org/) (React Framework)
 - [Appwrite](https://appwrite.io/) (for database, an ORM tool, file storage, Messaging and authentication)
+- [Hono.js](https://hono.dev/) (for node.js framework / an Express alternative)
 - [TypeScript 5](https://www.typescriptlang.org/) (Type Checking)
 - [Tailwind CSS 3.4.1](https://tailwindcss.com/) (Styling)
 - [ShadCN](https://ui.shadcn.com/) (UI Components)
@@ -22,23 +23,23 @@ Jiraf is an issue tracking and agile project management app all built using Next
 
 ## <a name="features">🔋 Features</a>
 
-🏢 Workspaces
-📊 Projects / Epics
-✅ Tasks
-📋 Kanban Board View
-🗃️ Data Table View
-📅 Calendar View
-✉️ Invite System
-⚙️ Workspace and Project Settings
-🖼️ Image Uploads (for avatars and attachments)
-🔌 Appwrite SDK Integration
-🎨 Shadcn UI & TailwindCSS Styling
-🔍 Advanced Search and Filtering
-📈 Analytics Dashboard
-👥 User Roles and Permissions
-🔒 Authentication (OAuth and Email)
-📱 Responsive Design (Mobile-friendly)
-🚀 API using Hono.js
+- 🏢 Workspaces
+- 📊 Projects / Epics
+- ✅ Tasks
+- 📋 Kanban Board View
+- 🗃️ Data Table View
+- 📅 Calendar View
+- ✉️ Invite System
+- ⚙️ Workspace and Project Settings
+- 🖼️ Image Uploads (for avatars and attachments)
+- 🔌 Appwrite SDK Integration
+- 🎨 Shadcn UI & TailwindCSS Styling
+- 🔍 Advanced Search and Filtering
+- 📈 Analytics Dashboard
+- 👥 User Roles and Permissions
+- 🔒 Authentication (OAuth and Email)
+- 📱 Responsive Design (Mobile-friendly)
+- 🚀 API using Hono.js
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
